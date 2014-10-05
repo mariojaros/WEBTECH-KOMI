@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE resources PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 4.0 Resource Definitions//EN" "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
+<resources>
+    <jdbc-connection-pool name="DummyDemoPool" res-type="javax.sql.DataSource"
+                          datasource-classname="com.mysql.jdbc.jdbc2.optional.MysqlDataSource"
+                          ping="true" steady-pool-size="8" pool-resize-quantity="2" max-pool-size="32" 
+                          idle-timeout-in-seconds="600" max-wait-time-in-millis="6000"
+                          statement-timeout-in-seconds="60">
+        <property name="User" value="majko" />
+        <property name="ServerName" value="localhost" />
+        <property name="Port" value="3306" />
+        <property name="DatabaseName" value="db" />
+        <property name="Password" value="Password61" />
+        <property name="AutoReconnect" value="true" />
+        <property name="URL" value="jdbc:mysql://localhost:3306/db" />
+    </jdbc-connection-pool>
+</resources>
