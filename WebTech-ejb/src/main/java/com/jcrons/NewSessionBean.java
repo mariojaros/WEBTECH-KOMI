@@ -6,19 +6,31 @@ package com.jcrons;
 
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
-/**
- *
- * @author martin
- */
+
 @Stateless
 @LocalBean
 public class NewSessionBean {
 
-    public void businessMethod() {
+	@PersistenceContext(name="WEBTECH-PU")
+	EntityManager em;
+	
+    public String businessMethod() {
+    	APP_TABLE1 appTable = em.find(APP_TABLE1.class, new Long(0));
+    	
+    	return appTable.getContent()+createMe();
+    }
+    
+    public String createMe(){
+    	Majko majko = new Majko();
+    	majko.setName("Mario Jaros");
+    	majko.setId(new Long(50));
+    	em.persist(majko);
+    	return majko.getName();
     }
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    
 
 }
