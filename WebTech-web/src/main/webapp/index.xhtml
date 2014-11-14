@@ -8,6 +8,13 @@
 <h:head>
 </h:head> 
 <h:body> 
-	<h:outputLabel value="#{newManagedBean.label}"></h:outputLabel>
+<ul>
+<ui:repeat  value="#{newManagedBean.majkos}" var="majko">
+        <li>
+            <h:outputLabel style = "border: 1px; border-bottom-style: dotted;" value="#{majko}"></h:outputLabel>
+        </li>
+    </ui:repeat>
+</ul>
+	
 </h:body> 
 </html>

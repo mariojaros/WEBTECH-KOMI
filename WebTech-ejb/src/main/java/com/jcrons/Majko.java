@@ -9,6 +9,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="MARIO_JAROS")
+//@NamedQuery(name="MarioJaros.SelectAll", query="SELECT e FROM MARIO_JAROS e")
 public class Majko implements Serializable {
 
 	

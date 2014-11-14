@@ -4,6 +4,9 @@
  */
 package com.jcrons;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.ejb.LocalBean;
 import javax.persistence.EntityManager;
@@ -17,18 +20,20 @@ public class NewSessionBean {
 	@PersistenceContext(name="WEBTECH-PU")
 	EntityManager em;
 	
-    public String businessMethod() {
+    public List<String> businessMethod() {
     	APP_TABLE1 appTable = em.find(APP_TABLE1.class, new Long(0));
+    	List<Majko> majkos = (List<Majko>) em.createQuery("SELECT e FROM Majko e").getResultList();
     	
-    	return appTable.getContent()+createMe();
+    	
+    	return createMe(majkos);
     }
     
-    public String createMe(){
-    	Majko majko = new Majko();
-    	majko.setName("Mario Jaros");
-    	majko.setId(new Long(50));
-    	em.persist(majko);
-    	return majko.getName();
+    public List<String> createMe(List<Majko> majkos){
+    	List<String> stringName = new ArrayList<>();
+		for (Majko majko : majkos){
+    		stringName.add(majko.getName());
+    	}
+		return stringName;
     }
 
     
