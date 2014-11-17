@@ -5,6 +5,9 @@
         http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd">
     <persistence-unit name="WEBTECH-PU" transaction-type="JTA">
         <jta-data-source>jndi/DummyDemoDB</jta-data-source>
+        <class>com.jcrons.entity.DigitalContent</class>
+        <class>com.jcrons.entity.PaymentInfo</class>
+        <class>com.jcrons.entity.Profile</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="eclipselink.ddl-generation" value="create-tables"/>

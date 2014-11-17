@@ -8,6 +8,8 @@ import javax.ejb.EJB;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
+import com.jcrons.services.NewSessionBean;
+
 @Named
 @ViewScoped
 public class NewManagedBean implements Serializable{
@@ -31,7 +33,7 @@ public class NewManagedBean implements Serializable{
 
 	@PostConstruct
 	private void init(){
-		majkos = sessionBean.businessMethod();
+		label=sessionBean.getAllDigitalContent();
 	}
 	
 	public String getLabel() {

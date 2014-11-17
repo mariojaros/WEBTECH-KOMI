@@ -9,9 +9,9 @@
         <property name="User" value="majko" />
         <property name="ServerName" value="localhost" />
         <property name="Port" value="3306" />
-        <property name="DatabaseName" value="db" />
+        <property name="DatabaseName" value="webtechDB" />
         <property name="Password" value="Password61" />
         <property name="AutoReconnect" value="true" />
-        <property name="URL" value="jdbc:mysql://localhost:3306/db" />
+        <property name="URL" value="jdbc:mysql://localhost:3306/webtechDB" />
     </jdbc-connection-pool>
 </resources>

@@ -8,14 +8,17 @@
 <h:head>
 </h:head>
 <h:body>
-	<h:link outcome="author/authorIndex.xhtml" value="To the admin section" />
-	<h:link outcome="user/userIndex.xhtml" value="To the user section" />
-	
-	
-	
-	<h:outputLabel value="#{newManagedBean.label}"></h:outputLabel>  
-	
-	
+vcxvcxv
+	<p:panel header="Login Form">
+
+		<form method="post" action="j_security_check">
+			 Username: <input type="text" name="j_username" /> 
+			 Password: <input type="password" name="j_password" /> 
+			 <input type="submit"	value="Login" /> 
+			 <input type="reset" value="Reset" />
+		</form>
+
+</p:panel>
 
 </h:body>
 </html>
