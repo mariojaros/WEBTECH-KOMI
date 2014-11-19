@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resources PUBLIC "-//GlassFish.org//DTD GlassFish Application Server 4.0 Resource Definitions//EN" "http://glassfish.org/dtds/glassfish-resources_1_5.dtd">
 <resources>
-    <jdbc-connection-pool name="DummyDemoPool" res-type="javax.sql.DataSource"
+    <jdbc-connection-pool name="WebTechPool" res-type="javax.sql.DataSource"
                           datasource-classname="com.mysql.jdbc.jdbc2.optional.MysqlDataSource"
                           ping="true" steady-pool-size="8" pool-resize-quantity="2" max-pool-size="32" 
                           idle-timeout-in-seconds="600" max-wait-time-in-millis="6000"
