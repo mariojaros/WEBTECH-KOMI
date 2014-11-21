@@ -3,12 +3,12 @@
 <glassfish-web-app>
   
     <security-role-mapping>
-        <role-name>AUTHOR</role-name>
+        <role-name>author</role-name>
         <group-name>author</group-name>
     </security-role-mapping>
     
     <security-role-mapping>
-        <role-name>USER</role-name>
+        <role-name>user</role-name>       
         <group-name>user</group-name>
     </security-role-mapping>
 

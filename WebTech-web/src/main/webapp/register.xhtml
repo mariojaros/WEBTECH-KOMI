@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>	
+</h:head>
+<h:body>
+      <div class="ui-grid ui-grid-responsive">
+	<div class="ui-grid-row">
+	<div class="ui-grid-col-4">
+		</div>
+		<div class="ui-grid-col-4">
+		<h:graphicImage styleClass="loginLogo" library="images" name="logo.png" />
+		</div>
+		<div class="ui-grid-col-4">
+		</div>
+	</div>
+	<div class="ui-grid-row">
+		<div class="ui-grid-col-4">
+		</div>
+		<div class="ui-grid-col-4">
+		<p:panel styleClass="loginform" header="Register Form">
+
+		<h:form>
+		<p:growl></p:growl>
+		<p:messages id="messages" showDetail="true" autoUpdate="true" />
+		<p:panelGrid columns="2" styleClass="logintable">
+			 <h:outputText value="Username: " /> 
+			 <p:inputText id="username" value="#{newManagedBean.username}" required="true" requiredMessage="Fuck off"/> 
+			 <h:outputText value="Password: " />
+			 <p:password id="passwd1" value="#{newManagedBean.password}" match="passwd2" required="true"/>
+			 <h:outputText value="Password again: "/>
+			 <p:password id="passwd2" value="#{newManagedBean.password}"/>
+			 <h:outputText value="Registrovať ako: " /> 
+				<p:selectOneMenu id="roly" value="#{newManagedBean.rola}">
+            		<f:selectItem itemLabel="Select One" itemValue="" />
+            		<f:selectItem itemLabel="Author" itemValue="author" />            
+            		<f:selectItem itemLabel="User" itemValue="user" />
+        		</p:selectOneMenu>
+			 <p:commandButton value="Register" ajax="false" action="#{newManagedBean.register}"></p:commandButton>
+			 <input type="reset" value="Reset" />
+		</p:panelGrid>	 
+		</h:form>
+
+		</p:panel>
+		</div>
+		<div class="ui-grid-col-4">
+		</div>
+	</div>
+
+</div>
+</h:body>
+</html>

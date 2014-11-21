@@ -2,7 +2,10 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
           http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
     version="3.0">
-   
+   <context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>webtech</param-value>
+  	</context-param>
    <!-- 
       FacesServlet is main servlet responsible to handle all request. 
       It acts as central controller.
@@ -20,7 +23,7 @@
    </servlet-mapping>
    
    <welcome-file-list>
-      <welcome-file>/index.xhtml</welcome-file>
+      <welcome-file>index.xhtml</welcome-file>
    </welcome-file-list>
     <error-page>
         <error-code>403</error-code>
@@ -29,7 +32,7 @@
     
     <login-config>
         <auth-method>FORM</auth-method>
-        <realm-name>jdbcRealm</realm-name>
+        <realm-name>webtechJDBCRealm</realm-name>
         <form-login-config>
             <form-login-page>/login.xhtml</form-login-page>
             <form-error-page>/403.xhtml</form-error-page>
@@ -37,11 +40,11 @@
     </login-config>
     <security-role>
         <description></description>
-        <role-name>AUTHOR</role-name>
+        <role-name>author</role-name>
     </security-role>
     <security-role>
         <description></description>
-        <role-name>USER</role-name>
+        <role-name>user</role-name>
     </security-role>
     <security-constraint>       
         <display-name>Author pages</display-name>
@@ -59,7 +62,7 @@
         </web-resource-collection>
         <auth-constraint>
             <description></description>
-            <role-name>AUTHOR</role-name>
+            <role-name>author</role-name>
         </auth-constraint>
         <user-data-constraint>
             <transport-guarantee>NONE</transport-guarantee>
@@ -81,7 +84,7 @@
         </web-resource-collection>
         <auth-constraint>  
             <description></description>         
-            <role-name>USER</role-name>
+            <role-name>user</role-name>
         </auth-constraint>
         <user-data-constraint>
             <transport-guarantee>NONE</transport-guarantee>

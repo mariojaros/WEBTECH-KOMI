@@ -8,6 +8,8 @@
         <class>com.jcrons.entity.DigitalContent</class>
         <class>com.jcrons.entity.PaymentInfo</class>
         <class>com.jcrons.entity.Profile</class>
+        <class>com.jcrons.entity.Usertable</class>
+        <class>com.jcrons.entity.Grouptable</class>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
             <property name="eclipselink.ddl-generation" value="create-tables"/>

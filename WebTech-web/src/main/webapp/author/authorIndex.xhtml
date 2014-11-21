@@ -8,7 +8,9 @@
 <h:head>
 </h:head> 
 <h:body> 
-
-	
+<h:form>
+<p:commandButton action="#{authorBean.logout}" value="Logout" />
+<p:outputLabel value="#{authorBean.label}"></p:outputLabel>
+</h:form>	
 </h:body> 
 </html>

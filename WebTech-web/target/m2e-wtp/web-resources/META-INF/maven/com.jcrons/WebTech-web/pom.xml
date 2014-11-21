@@ -46,8 +46,14 @@
 		<dependency>
 			<groupId>org.primefaces</groupId>
 			<artifactId>primefaces</artifactId>
-			<version>5.0</version>
+			<version>5.1</version>
 		</dependency>
+		
+		<dependency>                                        
+ 			<groupId>com.jcrons</groupId>                                        
+ 			<artifactId>webtech</artifactId>                                         
+ 			<version>1.0-SNAPSHOT</version>                                        
+		</dependency> 
     </dependencies>
 
     <build>
