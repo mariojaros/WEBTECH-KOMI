@@ -11,5 +11,8 @@
         <dependent-module archiveName="WebTech-api-1.0-SNAPSHOT.jar" deploy-path="/lib" handle="module:/resource/WebTech-api/WebTech-api">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="guava-18.0.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/com/google/guava/guava/18.0/guava-18.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>
