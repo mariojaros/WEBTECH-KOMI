@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Webtech</title>
+	
+</h:head>
+
+<h:body>
+<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+		<h1 style="color: black;">Webtech</h1>
+	
+	<br></br>
+	<br></br>
+	<center>
+		<div class="flex-container-register">
+			<br></br> <br></br>
+			<h:form>
+				<center>
+					<p:inputText placeholder="Tvoj nový nick" styleClass="input" id="username" value="#{newManagedBean.username}" required="true" requiredMessage="Fuck off"/> 
+					<br></br> <br></br>
+					<p:password placeholder="Tvoje heslo" styleClass="input" id="passwd1" value="#{newManagedBean.password}" match="passwd2" required="true"/>
+					<br></br> <br></br>
+					<p:password placeholder="Heslo opäť" styleClass="input" id="passwd2" value="#{newManagedBean.password}"/>
+					<br></br> <br></br>
+					<p:selectOneMenu styleClass="input-select-register" id="roly" value="#{newManagedBean.rola}">
+            		<f:selectItem itemLabel="Registrovať ako:" itemValue="" />
+            		<f:selectItem itemLabel="Author" itemValue="author" />            
+            		<f:selectItem itemLabel="User" itemValue="user" />
+        		</p:selectOneMenu>
+        		<br></br>
+        		<br></br>
+			 <p:commandButton styleClass="button" value="Register" ajax="false" action="#{newManagedBean.register}"></p:commandButton>
+				</center>
+			</h:form>
+		</div>
+	</center>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<div class="flex-body">
+		<center>
+			<p:button value="STATS" styleClass="smallbutton" href="stat.xhtml" />
+			<p:button value="TERM" styleClass="smallbutton" href="stat.xhtml" />
+			<p:button value="FAQ" styleClass="smallbutton" href="stat.xhtml" />
+		</center>
+	</div>
+</h:body>
+</html>

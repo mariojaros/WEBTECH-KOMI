@@ -1,0 +1,139 @@
+body {
+	background-image: url("#{resource['images:bak.png']}");
+	height: 100%;
+}
+
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+#header {
+	padding: 10px;
+	height: 50px;
+	background-image: url("hed.png");
+	font-family: titleFont;
+	font-size: 40pt;
+	color: white;
+	text-shadow: 1px 2px 1px black;
+}
+
+#menu {
+	background: red;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#content {
+	padding: 10px;
+	padding-bottom: 80px; /* Height of the footer element */
+	text-align: center;
+}
+
+#footer {
+	width: 100%;
+	height: 25px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: red;
+}
+
+.buttonN {
+	width: 125px;
+	height: 40px;
+	font-size: 20px;
+	background: #b20000 !important;
+	border: none;
+	box-shadow: none !important;
+	color: white;
+	font-family: normalFont;
+}
+
+.buttonB {
+	width: 125px;
+	height: 40px;
+	font-size: 20px;
+	background: red;
+	padding: 0 !important;
+	border: none;
+	box-shadow: none;
+	color: white;
+	font-family: normalFont;
+}
+
+@font-face {
+	font-family: normalFont;
+	src: url("#{resource['fonts:hel.otf']}");
+}
+
+@font-face {
+	font-family: titleFont;
+	src: url("#{resource['fonts:chin.TTF']}");
+}
+
+.buttonN:hover {
+	background-color: #b20000 !important;
+}
+
+.buttonB:hover {
+	background-color: #b20000 !important;
+	font-weight: bold;
+}
+
+
+.buttonC {
+	width: 125px;
+	height: 30px;
+	font-size: 10pt !important;
+	background: #33ff00 !important;
+	font-family: normalFont !important;
+	border-bottom-left-radius: 3em !important;
+	border-bottom-right-radius: 3em !important;
+	border-top-right-radius: 3em !important;
+	border-top-left-radius: 3em !important;
+	padding: 0 !important;
+	border: none;
+	box-shadow: none !important;
+	color: white !important;
+}
+.panelButton{
+	float: right;	
+	background-color: red;
+}
+.panelButton .ui-button{
+	border-style: none;
+	height: 40px;
+}
+
+.contentNews {
+	
+	background-color: rgba(255,255,255,0);
+}
+.contentNews .ui-datascroller-content{
+	background-color: rgba(255,255,255,0);
+	border-style: none;
+}
+.contentNews .ui-panel-titlebar {
+	padding: 0px;
+}
+
+.contentNews li {
+	margin-bottom: 10px;
+}
+.contentNews .ui-widget-header{
+	color: black;
+	border-style: none;
+	background: rgba(255,255,255,0);
+	border-top-style: solid;
+	border-top-color: red;
+}
+.contentNews li .ui-panel label{
+	float: right;
+	margin: 0px;	
+}
+.contentNews li .ui-panel {
+	border-style: none;
+	padding: 0px;
+}
+

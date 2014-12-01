@@ -34,12 +34,12 @@ public class NewManagedBean implements Serializable{
 
 	@PostConstruct
 	private void init(){
-		label=sessionBean.getAllDigitalContent();
+		
 	}
 	
 	public String register() {
 		registerService.register(username, password, rola);
-		return "/login?faces-redirect=true";
+		return "index?faces-redirect=true";
 	}
 	
 	public List<String> getMajkos() {

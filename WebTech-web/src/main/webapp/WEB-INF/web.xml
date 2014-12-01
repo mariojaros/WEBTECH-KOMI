@@ -34,7 +34,7 @@
         <auth-method>FORM</auth-method>
         <realm-name>webtechJDBCRealm</realm-name>
         <form-login-config>
-            <form-login-page>/login.xhtml</form-login-page>
+            <form-login-page>/indexBeta.xhtml</form-login-page>
             <form-error-page>/403.xhtml</form-error-page>
         </form-login-config>
     </login-config>

@@ -1,11 +1,209 @@
-.loginform{
+.loginform {
+	background-color: rgba(255,255,255,0);
+}
+
+.loginform table, .loginform tr, .loginform td{
+	background-color: rgba(255,255,255,0.6);
+}
+
+.loginLogo {
+	width: 100%;
+	margin: 50px 0px;
+}
+.logintable {
+	background-color: rgba(255,255,255,0.6);
+}
+.logintable tr,.logintable td {
+	border-style: none !important;
+	background: none;
+}
+
+body {
+	background-image: url("#{resource['images:bak.png']}");
+	height: 100%;
+}
+
+.button {
+	background: red;
+	height: 30px;
+	width: 200px;
+	color: #ffffff;
+	border-style: none;
+	border-bottom-left-radius: 0em;
+	border-bottom-right-radius: 0em;
+	border-top-right-radius: 0em;
+	border-top-left-radius: 0em;
+	margin: 0 !important;
+	padding: 0 !important;
+	border-top-color: red;
+	box-shadow: none;
+}
+
+.button:hover {
+	background: black;
+	cursor: pointer;
 	
 }
 
-.loginLogo{
-	width:100%;
-	margin: 50px 0px;
+.buttonText {
+	background: none;
+	height: 20px;
+	width: 250px;
+	font-size: 13px;
+	font-style: normal;
+	color: #ffffff;
+	margin: 0 !important;
+	padding: 0 !important;
+	border-top-color: red;
+	border-top-width: 2px;
+	border-top-style: solid;
+	box-shadow: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	border-bottom-left-radius: 0em;
+	border-bottom-right-radius: 0em;
+	border-top-right-radius: 0em;
+	border-top-left-radius: 0em;
+	text-shadow: 1px 1px #000000;
 }
-.logintable tr, .logintable td {
-	border-style: none !important
+.buttonText:hover {
+	color: black;
+}
+
+.smallbutton {
+	background: red !important;
+	height: 25px;
+	width: 80px;
+	color: #ffffff;
+	font-size: 10px;
+	border-bottom-left-radius: 0em;
+	border-bottom-right-radius: 0em;
+	border-top-right-radius: 0em;
+	border-top-left-radius: 0em;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: none;
+	box-shadow: none;
+}
+.smallbutton:hover {
+	color: black;
+}
+
+.input {
+	height: 30px;
+	width: 200px;
+	border-bottom-left-radius: 0em;
+	border-bottom-right-radius: 0em;
+	border-top-right-radius: 0em;
+	border-top-left-radius: 0em;
+	border-style: none;
+	border-width: 0px; 
+	margin : 0 !important;
+	padding: 0 !important;
+	font-size: 10pt;
+	text-align: center;
+	margin: 0 !important
+}
+
+.input-select-register {
+	height: 30px;
+	width: 200px !important;
+	border-bottom-left-radius: 0em;
+	border-bottom-right-radius: 0em;
+	border-top-right-radius: 0em;
+	border-top-left-radius: 0em;
+	border-style: solid;
+	border-color: red;
+	border-width: 1px;
+	margin: 0 !important;
+	padding: 0 !important;
+	font-size: 10pt;
+	text-align: center;
+}
+
+.input-select-register .ui-selectonemenu-label {
+	text-align: center;
+}
+
+
+.flex-container {
+	width: 280px;
+	height: 250px;
+	background-color: rgba(0,0,0,0.6);
+	border-bottom-left-radius: 3em;
+	border-bottom-right-radius: 3em;
+	border-top-right-radius: 3em;
+	border-top-left-radius: 3em;
+	border-style: solid;
+	border-color: red;
+	border-width: 0px;
+}
+
+.flex-container-form{
+	opacity: 1;
+}
+
+.flex-container-register {
+	width: 280px;
+	height: 300px;
+	background-color: rgba(0,0,0,0.6);
+	border-bottom-left-radius: 3em;
+	border-bottom-right-radius: 3em;
+	border-top-right-radius: 3em;
+	border-top-left-radius: 3em;
+	border-style: solid;
+	border-color: red;
+	border-width: 0px;
+}
+
+h1 {
+	width: 100%;
+	height: 250px;
+	color: white;
+	text-align: center;
+	font-size: 200px;
+	font-family: titleFont;
+	font-weight: normal;
+	
+	
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+
+.flex-container-error {
+	background-image: url("#{resource['images:under.gif']}");
+	width: 400px;
+	height: 330px;
+	border-bottom-left-radius: 3em;
+	border-bottom-right-radius: 3em;
+	border-top-right-radius: 3em;
+	border-top-left-radius: 3em;
+	border-style: solid;
+	border-color: red;
+	border-width: 2px;
+}
+
+.flex-body {
+	text-align: center;
+	background-color: red;
+	width: 100%;
+	height: 25px;
+	color: #ffffff;
+	border-style: solid;
+	border-color: red;
+	border-width: 2px;
+}
+
+@font-face {
+	font-family: titleFont;
+	src: url("#{resource['fonts:HappyFox.otf']}");
+}
+font-face{
+	font-family: mojFont;
+	src: url("#{resource['fonts:Oswald-Light.ttf']}")
+}
+
+
+	
 }

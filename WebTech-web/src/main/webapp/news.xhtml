@@ -1,0 +1,392 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html">
+	<h:head>
+		<f:facet name="first">
+			<meta content='text/html; charset=UTF-8' http-equiv="Content-Type" />
+			<title>Webtech</title>
+		</f:facet>
+		<style type="text/css">
+html,body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+#header {
+	padding: 10px;
+	height: 50px;
+	background-image: url("hed.png");
+	font-family: titleFont;
+	font-size: 40pt;
+	color: white;
+	text-shadow: 1px 2px 1px black;
+}
+
+#menu {
+	padding: 10px;
+	height: 20px;
+	background: red;
+}
+
+#content {
+	padding: 10px;
+	padding-bottom: 80px; /* Height of the footer element */
+	background: white;
+}
+
+#footer {
+	width: 100%;
+	height: 25px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: red;
+}
+
+.buttonN {
+	width: 125px;
+	height: 40px;
+	font-size: 20px !important;
+	background: #b20000 !important;
+	margin-left: 5%;
+	margin-top: -10px;
+	margin-bottom: -50px;
+	border-bottom-left-radius: 0em !important;
+	border-bottom-right-radius: 0em !important;
+	border-top-right-radius: 0em !important;
+	border-top-left-radius: 0em !important;
+	padding: 0 !important;
+	border: none;
+	box-shadow: none !important;
+	color: white;
+	font-family: normalFont !important;
+}
+
+.buttonB {
+	width: 125px;
+	height: 40px;
+	font-size: 20px !important;
+	background: red !important;
+	margin-top: -10px;
+	margin-bottom: -50px;
+	border-bottom-left-radius: 0em !important;
+	border-bottom-right-radius: 0em !important;
+	border-top-right-radius: 0em !important;
+	border-top-left-radius: 0em !important;
+	padding: 0 !important;
+	border: none;
+	box-shadow: none !important;
+	color: white;
+	font-family: normalFont !important;
+}
+
+@font-face {
+	font-family: normalFont;
+	src: url(hel.otf);
+}
+
+@font-face {
+	font-family: titleFont;
+	src: url(chin.ttf);
+}
+
+.buttonN:hover {
+	background-color: #b20000 !important;
+}
+
+.buttonB:hover {
+	background-color: #b20000 !important;
+	font-weight: bold;
+}
+
+.ui-button {
+	width: 125px;
+	height: 40px;
+	font-size: 15px;
+	background-color: #ff7f7f;
+	border-bottom-left-radius: 0em;
+	border-bottom-right-radius: 0em;
+	border-top-right-radius: 0em;
+	border-top-left-radius: 0em;
+	padding: 0 !important;
+	border: none;
+	box-shadow: none !important;
+	color: white;
+}
+
+.ui-button:hover {
+	background-color: #ff7f7f;
+}
+
+.ui-menubutton {
+	left: 85%;
+	top: 70px;
+	bottom: auto;
+	position: absolute;
+}
+
+.ui-state-default {
+	background: none;
+}
+
+.ui-button {
+	width: 125px;
+	height: 40px;
+	font-size: 20px;
+	background-color: #ff7f7f;
+	border-bottom-left-radius: 0em;
+	border-bottom-right-radius: 0em;
+	border-top-right-radius: 0em;
+	border-top-left-radius: 0em;
+	padding: 0 !important;
+	border: none;
+	box-shadow: none !important;
+	color: white;
+	font-family: titlefont;
+}
+
+.ui-button:hover {
+	background-color: #ff7f7f;
+}
+
+.ui-menu {
+	background: white;
+	border: none;
+	border-bottom-left-radius: 1em;
+	border-bottom-right-radius: 1em;
+	border-top-right-radius: 1em;
+	border-top-left-radius: 1em;
+	color: white;
+	box-shadow: 0px 0px 8px red;
+	position: static;
+	font-family: normalFont;
+}
+
+.ui-state-focus {
+	background: none !important;
+}
+
+.ui-state-hover a,.ui-state-hover a:hover {
+	color: red;
+	text-decoration: none;
+	background: white;
+}
+
+.ui-state-hover,.ui-widget-content .ui-state-hover,.ui-widget-header .ui-state-hover,.ui-state-focus,.ui-widget-content .ui-state-focus,.ui-widget-header .ui-state-focus
+	{
+	box-shadow: none !important;
+	padding-right: 0px;
+	background: white;
+}
+
+.ui-inputfield {
+	box-shadow: none !important;
+}
+
+.ui-state-default {
+	border-color: red;
+	border-bottom-left-radius: 3em;
+	border-bottom-right-radius: 3em;
+	border-top-right-radius: 3em;
+	border-top-left-radius: 3em;
+}
+
+.ui-inputfield {
+	text-align: center;
+}
+
+.buttonC {
+	width: 125px;
+	height: 30px;
+	font-size: 10pt !important;
+	background: #33ff00 !important;
+	margin-left: 100%;
+	margin-top: 10%;
+	margin-bottom: -50px;
+	font-family: normalFont !important;
+	border-bottom-left-radius: 3em !important;
+	border-bottom-right-radius: 3em !important;
+	border-top-right-radius: 3em !important;
+	border-top-left-radius: 3em !important;
+	padding: 0 !important;
+	border: none;
+	box-shadow: none !important;
+	color: white !important;
+}
+
+.panel {
+	margin-top: 20px;
+	width: 80%;
+}
+
+.buttonD {
+	background: red !important;
+	width: 150px;
+	height: 25px;
+	margin-top: -5px;
+	margin-right: -10px;
+	font-family: normalFont !important;
+	font-size: 15px !important;
+	border-bottom-left-radius: 0em !important;
+	border-bottom-right-radius: 0em !important;
+	border-top-right-radius: 0em !important;
+	border-top-left-radius: 0em !important;
+	padding: 0 !important;
+	border: none !important;
+	box-shadow: none !important;
+	color: white !important;
+	float: right;
+}
+
+.buttonD:hover {
+	background-color: red !important;
+	box-shadow: none !important;
+}
+
+.ui-widget-header {
+	border-top-color: red;
+	border-bottom-color: white;
+	border-left-color: white;
+	border-right-color: white;
+	border-width: 2px;
+	background: none;
+}
+
+.rowka {
+	font-size: 30pt;
+	font-family: normalFont !important;
+	border: solid;
+	margin-top: -2%;
+}
+
+.tempRow {
+	border: solid;
+	height: 200px;
+}
+
+.ui-widget {
+	font-family: normalFont;
+}
+
+.buttonP {
+	height: 25px !important;
+	width: 150px !important;
+	background: #33ff00 !important;
+	border: none !important;
+	margin-left: 85%;
+	margin-top: 3px;
+	padding: 0 !important;
+	box-shadow: none !important;
+	font-size: 15px !important;
+	font-family: normalFont !important;
+	color: white !important;
+}
+
+.ui-panelgrid td {
+	border: none !important;
+}
+
+.ui-panelgrid {
+	
+}
+</style>
+
+	</h:head>
+
+	<h:body>
+		<div id="wrapper">
+			<h:form>
+				<div id="header">
+					<center>Webtech</center>
+				</div>
+				<div id="menu">
+					<p:button value="NEWS" styleClass="buttonN" href="news.xhtml" />
+					<p:button value="BOOKS" styleClass="buttonB" href="books.xhtml" />
+					<p:menuButton value="Login" styleClass="panelButton">
+						<p:menuitem value="Account" url="account.xhtml" />
+						<p:menuitem value="Settings" url="stat.xhtml" />
+						<p:menuitem value="Terms" url="stat.xhtml" />
+
+						<p:separator />
+						<p:menuitem value="Logout" icon="ui-icon-extlink"
+							url="login.xhtml" />
+					</p:menuButton>
+
+
+				</div>
+
+
+				<div id="content">
+					<center>
+
+						<p:panelGrid styleClass="panel">
+							<f:facet name="header">
+								<p:row>
+									<p:column colspan="7">
+
+										<p:button value="15.6.2015" styleClass="buttonD" />
+
+									</p:column>
+								</p:row>
+
+							</f:facet>
+
+
+							<p:row>
+								<p:column style="width:200px!important">
+									<p:graphicImage library="images" name="exm.png"/>
+								</p:column>
+
+
+								<p:column rowspan="2" style="font-weight: bold;">
+									<div class="rowka">
+										<p:row>
+											<p:outputLabel value="Name of book" />
+										</p:row>
+									</div>
+									<div class="tempRow">
+										<p:row>
+											<p:outputLabel value="Description" />
+										</p:row>
+									</div>
+									<p:row>
+
+										<p:button value="Pay" styleClass="buttonP" />
+									</p:row>
+
+
+								</p:column>
+
+							</p:row>
+						</p:panelGrid>
+
+
+
+
+					</center>
+				</div>
+
+			</h:form>
+		</div>
+
+
+
+
+
+
+	</h:body>
+
+</f:view>
+</html>
+

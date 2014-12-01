@@ -30,15 +30,9 @@ public class DigitalContent implements Serializable {
 
 	private String path;
 
-	private byte status;
-
-	//bi-directional many-to-one association to Profile
 	@ManyToOne
+	@JoinColumn(name = "idProfile")
 	private Profile profile;
-
-	//bi-directional many-to-one association to PaymentInfo
-	@OneToMany(mappedBy="digitalContent")
-	private List<PaymentInfo> paymentInfos;
 
 	public DigitalContent() {
 	}
@@ -99,42 +93,12 @@ public class DigitalContent implements Serializable {
 		this.path = path;
 	}
 
-	public byte getStatus() {
-		return this.status;
-	}
-
-	public void setStatus(byte status) {
-		this.status = status;
-	}
-
 	public Profile getProfile() {
 		return this.profile;
 	}
 
 	public void setProfile(Profile profile) {
 		this.profile = profile;
-	}
-
-	public List<PaymentInfo> getPaymentInfos() {
-		return this.paymentInfos;
-	}
-
-	public void setPaymentInfos(List<PaymentInfo> paymentInfos) {
-		this.paymentInfos = paymentInfos;
-	}
-
-	public PaymentInfo addPaymentInfo(PaymentInfo paymentInfo) {
-		getPaymentInfos().add(paymentInfo);
-		paymentInfo.setDigitalContent(this);
-
-		return paymentInfo;
-	}
-
-	public PaymentInfo removePaymentInfo(PaymentInfo paymentInfo) {
-		getPaymentInfos().remove(paymentInfo);
-		paymentInfo.setDigitalContent(null);
-
-		return paymentInfo;
 	}
 
 }

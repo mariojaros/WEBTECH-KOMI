@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Webtech</title>
+	<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+</h:head>
+
+<h:body>
+	<h1><span style="color: black">Webtech</span></h1>
+
+	<center>
+		<div class="flex-container">
+			<br></br> <br></br>
+
+			
+				<form class="flex-container-form" method="post" action="j_security_check">
+					<input placeholder="Login" class="input" type="text"
+						name="j_username" />
+					<br></br>
+					<br></br>
+					<input placeholder="Password" class="input" type="password"
+						name="j_password" />
+					<br></br>
+					<br></br>
+					<input class="button" type="submit" value="Login" />
+					<br></br>
+					<br></br>
+					<br></br>
+
+					<p:button value="Don't have an account?" styleClass="buttonText"
+						href="/registerBeta.xhtml" />
+
+				</form>
+
+
+			
+		</div>
+	</center>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<br></br>
+	<div class="flex-body">
+		
+			<p:button value="STATS" styleClass="smallbutton" href="stat.xhtml" />
+			<p:button value="TERM" styleClass="smallbutton" href="stat.xhtml" />
+			<p:button value="FAQ" styleClass="smallbutton" href="stat.xhtml" />
+		
+	</div>
+</h:body>
+</html>
