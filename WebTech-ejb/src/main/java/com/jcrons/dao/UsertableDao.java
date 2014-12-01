@@ -6,4 +6,5 @@ import javax.ejb.Local;
 public interface UsertableDao {
 	
 	public void createUser(String username,String password);
+	
 }
