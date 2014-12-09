@@ -31,6 +31,7 @@ public class UserServiceImpl implements UserProfileService{
 			newOne.setContentName(content.getName());
 			newOne.setDescription(content.getDescription());
 			newOne.setNazovAutora(content.getProfile().getFirstName());
+			newOne.setPath(content.getPath());
 			news.add(newOne);
 		}
 		return news;
@@ -50,6 +51,26 @@ public class UserServiceImpl implements UserProfileService{
 	public void createUser(ProfileDto profile) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public String getUserNick(String username) {
+		return profileDao.getProfile(username).getNick();
+	}
+
+	@Override
+	public void setUserName(String username, String newName) {
+		profileDao.getProfile(username).setFirstName(newName);
+	}
+
+	@Override
+	public void setUserSurname(String username, String newSurname) {
+		profileDao.getProfile(username).setLastName(newSurname);
+	}
+
+	@Override
+	public void setUserNick(String username, String newNick) {
+		profileDao.getProfile(username).setNick(newNick);
 	}
 
 }

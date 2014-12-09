@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Webtech</title>
+</h:head>
+
+<h:body>
+	<h:outputStylesheet library="css" name="news.css"></h:outputStylesheet>
+
+	<div id="header">
+		<p:button value="news"></p:button>
+		<p:button value="books"></p:button>
+	</div>
+	<div id="content">
+
+		<p:fieldset styleClass="fieldset" toggleable="true"
+			legend="NAJPOPULÁRNEJŠIE KOMIKSY">
+			<p:carousel id="contentCarousel" value="#{userBean.news}" var="new">
+				<f:facet name="header" ></f:facet>
+				<p:panelGrid columns="1" style="margin: auto;">
+					<h1>#{new.contentName}</h1>
+					<h2>#{new.nazovAutora}</h2>
+				</p:panelGrid>
+				<p:panelGrid columns="2">
+					<h:graphicImage width="200px" height="270px" value="#{new.path}" style="margin-top: 10px"/>
+					<p:outputLabel width="200px" value="#{new.description}"></p:outputLabel>
+				</p:panelGrid>
+
+				<p:commandButton value="donate" styleClass="donateButton"
+					style="margin:auto"></p:commandButton>
+
+			</p:carousel>
+		</p:fieldset>
+	</div>
+
+	<p:graphicImage width="350px"
+		style="position: absolute; left: 20px; top: 10px"
+		value="#{resource['images:logo.png']}"></p:graphicImage>
+	<h:form>
+		<p:menuButton value="#{userBean.label}"
+			style="position: absolute; left: 89%; top: 10%" styleClass="menuButton">
+			<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
+			<p:menuitem value="Settings"></p:menuitem>
+			<p:menuitem value="Terms"></p:menuitem>
+			<p:separator />
+			<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
+		</p:menuButton>
+	</h:form>
+
+</h:body>
+</html>

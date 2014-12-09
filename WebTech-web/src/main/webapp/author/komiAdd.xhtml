@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<h:head>
+	<title>Webtech</title>
+</h:head>
+
+<h:body>
+	<h:outputStylesheet library="css" name="add.css"></h:outputStylesheet>
+	<div id="header">
+		<p:button value="news"></p:button>
+		<p:button value="books"></p:button>
+	</div>
+
+	<div id="context">
+		<h1>
+			<span style="font-size: larger; margin-right: 5px;">+</span>ADD NEW
+			CONTENT
+		</h1>
+		<h:form>
+			<div id="uploadForm">
+				<p:panelGrid columns="1">
+					<p:inputText styleClass="inputButton" placeholder="Name"
+						value="#{uploadBean.name}" />
+
+					<p:inputText style="height: 50px" styleClass="inputButton"
+						placeholder="Description" value="#{uploadBean.description}" />
+
+					<p:inputText styleClass="inputButton" placeholder="Price"
+						value="#{uploadBean.finishValue}" />
+
+					<p:fileUpload value="#{uploadBean.file}" mode="advanced"
+						sizeLimit="1000000"
+						fileUploadListener="#{uploadBean.hadnleFileUpload}"
+						allowTypes="/(\.|\/)(gif|jpe?g|png)$/" styleClass="inputButton" />
+				</p:panelGrid>
+
+			</div>
+			<p:commandButton id="uploadButton" icon="ui-icon-disk" value="SAVE"
+				styleClass="uploadButton" ajax="false" action="#{uploadBean.upload}"></p:commandButton>
+		</h:form>
+	</div>
+	<p:graphicImage width="350px"
+		style="position: absolute; left: 20px; top: 10px"
+		value="#{resource['images:logo.png']}"></p:graphicImage>
+	<h:form>
+		<p:menuButton value="#{userBean.label}"
+			style="position: absolute; left: 89%; top: 10%"
+			styleClass="menuButton">
+			<p:menuitem value="Account"></p:menuitem>
+			<p:menuitem value="Settings"></p:menuitem>
+			<p:menuitem value="Terms"></p:menuitem>
+			<p:separator />
+			<p:menuitem value="Logout" action="#{authorBean.logout}"></p:menuitem>
+		</p:menuButton>
+	</h:form>
+
+</h:body>
+</html>

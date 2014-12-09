@@ -21,7 +21,7 @@ import com.jcrons.services.ContentService;
 @Stateless
 public class DigitalContentServiceImpl implements ContentService{
 	
-	private final String destination = File.separator + "Users" + File.separator + "mariojaros" +File.separator + "WEBTECH-DIGITALCONTENTS"; 
+	private final String destination = File.separator + "Users" + File.separator + "mariojaros" + File.separator + "WEBTECH-DIGITALCONTENTS"; 
 	
 	@EJB
 	ProfilesDao profileDao;
@@ -64,8 +64,9 @@ public class DigitalContentServiceImpl implements ContentService{
 			String username, InputStream fileStream, String fileName) {
 		
 		Profile profile = profileDao.getProfile(username);
-		String finalDestination = destination + "/" + username + "/" + fileName;
-		File file = new File(destination + File.separator + username + File.separator + fileName);
+		
+		String serverDestination = File.separator + "images" + File.separator + username + File.separator + fileName;
+		File file = new File(destination + serverDestination);
 		file.getParentFile().mkdirs();
 		
 		try {
@@ -76,7 +77,7 @@ public class DigitalContentServiceImpl implements ContentService{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		contentDao.createDigitalContent(0, description, finishValue, 1, name, finalDestination, profile);
+		contentDao.createDigitalContent(0, description, finishValue, 1, name, serverDestination, profile);
 		
 	}
 

@@ -7,6 +7,8 @@ public class News {
 	private String description;
 	
 	private String nazovAutora;
+	
+	private String path;
 
 	public String getContentName() {
 		return contentName;
@@ -30,5 +32,13 @@ public class News {
 
 	public void setNazovAutora(String nazovAutora) {
 		this.nazovAutora = nazovAutora;
+	}
+
+	public String getPath() {
+		return path;
+	}
+
+	public void setPath(String path) {
+		this.path = path;
 	}
 }

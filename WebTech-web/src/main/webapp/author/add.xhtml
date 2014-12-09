@@ -91,7 +91,7 @@ html,body {
 	height: 150px;
 	float: left;
 	margin-left: 15%;
-	background-image: url("add.png");
+	background-image: url("#{resource['images:add.png']}");
 	background-color: red;
 	border-bottom-left-radius: 8em;
 	border-bottom-right-radius: 8em;
@@ -187,12 +187,12 @@ html,body {
 							<br></br> <br></br>
 							<div class="drag">
 								<p:fileUpload value="#{uploadBean.file}" mode="advanced"
-									sizeLimit="100000" fileUploadListener="#{uploadBean.hadnleFileUpload}" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
+									sizeLimit="1000000" fileUploadListener="#{uploadBean.hadnleFileUpload}" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" />
 							</div>
 							<br></br> <br></br>
-							<p:commandButton icon="ui-icon-disk" value="SAVE"
+							<p:commandLink icon="ui-icon-disk" value="SAVE"
 								styleClass="button" ajax="false"
-								actionListener="#{uploadBean.upload}"></p:commandButton>
+								action="#{uploadBean.upload}"></p:commandLink>
 						</div>
 					</div>
 				</center>

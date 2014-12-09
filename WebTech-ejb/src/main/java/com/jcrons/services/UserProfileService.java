@@ -16,5 +16,13 @@ public interface UserProfileService {
 	
 	public String getUserSurname(String username);
 	
+	public String getUserNick(String username);
+	
+	public void setUserName(String username, String newName);
+	
+	public void setUserSurname(String username, String newSurname);
+	
+	public void setUserNick(String username, String newNick);
+	
 	public void createUser(ProfileDto profile);
 }
