@@ -61,7 +61,30 @@
 		</h:form>
 
 		<div id="purchasedBooks">
-			<h1>Purchased Books</h1>
+			<h1>Uploaded Books</h1>
+			<h:form>
+				<p:dataGrid var="book" value="#{authorBean.books}" columns="3"
+					layout="grid" rows="12" id="cars">
+
+					<p:panel header="#{book.contentName}" style="text-align:center">
+						<h:panelGrid columns="1" style="width:100%">
+							<p:graphicImage width="20px" height="27px" value="#{book.path}" />
+							<h:outputText value="#{book.nazovAutora}" />
+							<p:commandLink update="@form" title="View Detail"
+								oncomplete="PF('dialog').show()">
+								<h:outputText styleClass="ui-icon ui-icon-search"
+									style="margin:0 auto;" />
+								<f:setPropertyActionListener target="#{authorBean.selectedBook}"
+									value="#{book.path}" />
+							</p:commandLink>
+						</h:panelGrid>
+					</p:panel>
+				</p:dataGrid>
+
+				<p:dialog widgetVar="dialog" closable="true">
+					<p:graphicImage value="#{authorBean.selectedBook}"></p:graphicImage>
+				</p:dialog>
+			</h:form>
 		</div>
 	</div>
 

@@ -25,10 +25,12 @@ public class PaymentInfo implements Serializable {
 
 	//bi-directional many-to-one association to DigitalContent
 	@ManyToOne
+	@JoinColumn(name="idContent")
 	private DigitalContent digitalContent;
 
 	//bi-directional many-to-one association to Profile
 	@ManyToOne
+	@JoinColumn(name="idProfile")
 	private Profile profile;
 
 	public PaymentInfo() {

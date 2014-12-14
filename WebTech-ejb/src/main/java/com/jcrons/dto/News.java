@@ -1,6 +1,8 @@
 package com.jcrons.dto;
 
 public class News {
+	
+	private int id;
 
 	private String contentName;
 	
@@ -9,6 +11,16 @@ public class News {
 	private String nazovAutora;
 	
 	private String path;
+	
+	private int value;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public String getContentName() {
 		return contentName;
@@ -40,5 +52,13 @@ public class News {
 
 	public void setPath(String path) {
 		this.path = path;
+	}
+
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
 	}
 }

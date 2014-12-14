@@ -13,11 +13,15 @@ public interface ContentService {
 	
 	public List<DigitalContent> findAll();
 	
+	public List<DigitalContent> findAllbyTakeoff();
+	
 	public String getContentName(Long id);
 	
 	public String getContentPath(String name);
 	
 	public String getContentPath(Long id);
+	
+	public void setContentCurrentValue(int newPay, int id);
 	
 	public void createContent(DigitalContentDto content);
 	

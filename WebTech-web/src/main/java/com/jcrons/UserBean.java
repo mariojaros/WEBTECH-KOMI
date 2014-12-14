@@ -10,6 +10,8 @@ import javax.faces.context.FacesContext;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 
+import org.primefaces.context.RequestContext;
+
 import com.jcrons.dto.News;
 import com.jcrons.services.UserProfileService;
 
@@ -18,12 +20,16 @@ import com.jcrons.services.UserProfileService;
 public class UserBean implements Serializable{
 	
 	private List<News> news;
+	
+	private List<News> newsByTarget;
 
 	private String firstName;
 	
 	private String lastName;
 	
 	private String nick;
+	
+	private int donate;
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -35,7 +41,8 @@ public class UserBean implements Serializable{
 	@PostConstruct
 	public void init(){
 		label = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
-		news = userService.getNews();
+		news = userService.getNews(false);
+		newsByTarget=userService.getNewsByTakeOf();
 		firstName=userService.getUserName(FacesContext.getCurrentInstance().getExternalContext().getRemoteUser());
 		lastName=userService.getUserSurname(FacesContext.getCurrentInstance().getExternalContext().getRemoteUser());
 		nick=userService.getUserNick(FacesContext.getCurrentInstance().getExternalContext().getRemoteUser());
@@ -57,6 +64,14 @@ public class UserBean implements Serializable{
 		FacesContext context = FacesContext.getCurrentInstance();       
         context.addMessage(null, new FacesMessage("Successful",  "Your first name is "+nick+" now") );
 		userService.setUserNick(label, nick);
+	}
+	
+	public String donateKmks(int id){
+		userService.donate(donate, FacesContext.getCurrentInstance().getExternalContext().getRemoteUser(),id);
+		news = userService.getNews(false);
+		RequestContext.getCurrentInstance().execute("PF('donateDialog"+ id +"').hide()");
+		FacesContext.getCurrentInstance().addMessage(null,new FacesMessage("Succesfull", "Thanks you"));
+		return "komiNews?faces-redirect=true";
 	}
 
 	public String logout() {
@@ -102,5 +117,21 @@ public class UserBean implements Serializable{
 
 	public void setNick(String nick) {
 		this.nick = nick;
+	}
+
+	public int getDonate() {
+		return donate;
+	}
+
+	public void setDonate(int donate) {
+		this.donate = donate;
+	}
+
+	public List<News> getNewsByTarget() {
+		return newsByTarget;
+	}
+
+	public void setNewsByTarget(List<News> newsByTarget) {
+		this.newsByTarget = newsByTarget;
 	}
 }

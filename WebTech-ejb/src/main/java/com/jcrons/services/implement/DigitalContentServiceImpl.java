@@ -81,4 +81,15 @@ public class DigitalContentServiceImpl implements ContentService{
 		
 	}
 
+	@Override
+	public void setContentCurrentValue(int newPay, int id) {
+		contentDao.updateCurrentValue(newPay, id);		
+	}
+
+	@Override
+	public List<DigitalContent> findAllbyTakeoff() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

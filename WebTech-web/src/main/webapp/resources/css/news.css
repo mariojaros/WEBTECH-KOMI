@@ -31,27 +31,26 @@ body {
 	padding-left: 20px;
 }
 
-#content {	
+#content {
 	text-align: center;
-	background-color: rgba(51,51,51,0.5);
+	background-color: rgba(51, 51, 51, 0.5);
 	width: 98%;
 	min-height: 400px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin: 10px;
-	
 }
 
-#content .fieldset{
+#content .fieldset {
 	padding-top: 0px;
 	background-image: url("#{resource['images:pozadie.png']}");
 	background-repeat: repeat-y;
 	margin-left: 10px;
 	margin-right: 10px;
-	background: rgba(0,0,0,0);	
+	background: rgba(0, 0, 0, 0);
 }
 
-#content .fieldset legend{
+#content .fieldset legend {
 	width: 65%;
 	background: #333333;
 	font-family: normalFont;
@@ -61,12 +60,12 @@ body {
 
 #content .ui-carousel {
 	border-style: none;
-	background: rgba(0,0,0,0);
+	background: rgba(0, 0, 0, 0);
 	width: 100% !important;
 }
 
 #content .ui-carousel-header {
-	background: rgba(0,0,0,0);
+	background: rgba(0, 0, 0, 0);
 	border-style: none;
 	padding-top: 0px;
 }
@@ -111,6 +110,45 @@ body {
 	border-style: none;
 }
 
+.dialog {
+	border-style: none;
+	background: rgba(255, 255, 255, 0.9);
+}
+
+.dialog .ui-dialog-titlebar {
+	background: #ff0000;
+	border-style: none;
+}
+
+.dialog .ui-dialog-content {
+	background: rgba(0, 0, 0, 0) !important;
+}
+
+.dialog table {
+	background: rgba(0, 0, 0, 0) !important;
+}
+
+.dialog tr {
+	background: rgba(0, 0, 0, 0) !important;
+}
+
+.dialog tr td {
+	color: black !important;
+	background: rgba(0, 0, 0, 0) !important;
+}
+
+.dialog input {
+	font-weight: normal;
+	background: white;
+	color: black;
+}
+
+.dialog .button {
+	border-style: none;
+	background: #ff0000;
+	color: white;
+}
+
 .donateButton {
 	width: 90%;
 	margin-left: auto !important;
@@ -130,7 +168,7 @@ body {
 	background: #ff0000;
 }
 
-.menuButton .ui-widget{
+.menuButton .ui-widget {
 	border-style: none;
 	background: #ff0000;
 	font-family: normalFont;
@@ -145,7 +183,8 @@ body {
 	font-family: normalFont;
 	src: url("#{resource['fonts:hel.otf']}");
 }
-@font-face{
+
+@font-face {
 	font-family: guatami;
 	src: url("#{resource['fonts:gautamib.ttf']}")
 }

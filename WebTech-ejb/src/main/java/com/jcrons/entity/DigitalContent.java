@@ -10,7 +10,11 @@ import java.util.List;
  * 
  */
 @Entity
-@NamedQuery(name="DigitalContent.findAll", query="SELECT d FROM DigitalContent d")
+@NamedQueries({
+@NamedQuery(name="DigitalContent.findAll", query="SELECT d FROM DigitalContent d"),
+@NamedQuery(name="DigitalContent.findAllByMostPop",query="SELECT d FROM DigitalContent d ORDER BY d.currentValue DESC"),
+@NamedQuery(name="DigitalContent.findByProfile", query="Select d FROM DigitalContent d WHERE d.profile.idProfile = :profile" )
+})
 public class DigitalContent implements Serializable {
 	private static final long serialVersionUID = 1L;
 

@@ -104,6 +104,10 @@ body {
 	border-style: none;
 }
 
+#uploadForm .ui-progressbar{
+	width: 50px;
+}
+
 .uploadButton{
 	background: #ff0000;
 	border-style: solid;
