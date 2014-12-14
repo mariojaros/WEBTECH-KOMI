@@ -10,7 +10,10 @@ import java.util.Date;
  * 
  */
 @Entity
-@NamedQuery(name="PaymentInfo.findAll", query="SELECT p FROM PaymentInfo p")
+@NamedQueries({
+@NamedQuery(name="PaymentInfo.findAll", query="SELECT p FROM PaymentInfo p"),
+@NamedQuery(name="PaymentInfo.findContentbyProfile", query="SELECT DISTINCT p.digitalContent FROM PaymentInfo p WHERE p.profile.idProfile = :profile")
+})
 public class PaymentInfo implements Serializable {
 	private static final long serialVersionUID = 1L;
 

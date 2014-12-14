@@ -7,6 +7,7 @@ import javax.ejb.EJB;
 import javax.ejb.Stateless;
 
 import com.jcrons.dao.ContentDao;
+import com.jcrons.dao.PaymentInfoDao;
 import com.jcrons.dao.ProfilesDao;
 import com.jcrons.dto.News;
 import com.jcrons.dto.ProfileDto;
@@ -29,6 +30,9 @@ public class UserServiceImpl implements UserProfileService{
 	
 	@EJB
 	PaymentService payInfoService;
+	
+	@EJB
+	PaymentInfoDao payDao;
 	
 	@Override
 	public List<News> getNews(boolean unlocked) {
@@ -125,6 +129,23 @@ public class UserServiceImpl implements UserProfileService{
 	public List<News> getNewsByProfile(String username) {
 		
 		List<DigitalContent> contents= contentDao.findAllByProfile(profileDao.getProfile(username).getIdProfile());
+		List<News> news = new ArrayList<News>();
+		for (DigitalContent content : contents){
+			News newOne = new News();
+			newOne.setId(content.getIdDigitalContent());
+			newOne.setContentName(content.getName());
+			newOne.setDescription(content.getDescription());
+			newOne.setNazovAutora(content.getProfile().getFirstName());
+			newOne.setPath(content.getPath());
+			newOne.setValue(getPercent(content.getCurrentValue(),content.getFinishValue()));
+			news.add(newOne);
+		}
+		return news;
+	}
+
+	@Override
+	public List<News> getNewsByPurchased(String username) {
+		List<DigitalContent> contents= payDao.getContentByProfile(profileDao.getProfile(username).getIdProfile());
 		List<News> news = new ArrayList<News>();
 		for (DigitalContent content : contents){
 			News newOne = new News();

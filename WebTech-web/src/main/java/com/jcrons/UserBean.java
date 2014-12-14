@@ -22,6 +22,10 @@ public class UserBean implements Serializable{
 	private List<News> news;
 	
 	private List<News> newsByTarget;
+	
+	private List<News> books;
+	
+	private String selectedBook;
 
 	private String firstName;
 	
@@ -43,6 +47,7 @@ public class UserBean implements Serializable{
 		label = FacesContext.getCurrentInstance().getExternalContext().getRemoteUser();
 		news = userService.getNews(false);
 		newsByTarget=userService.getNewsByTakeOf();
+		books = userService.getNewsByPurchased(label);
 		firstName=userService.getUserName(FacesContext.getCurrentInstance().getExternalContext().getRemoteUser());
 		lastName=userService.getUserSurname(FacesContext.getCurrentInstance().getExternalContext().getRemoteUser());
 		nick=userService.getUserNick(FacesContext.getCurrentInstance().getExternalContext().getRemoteUser());
@@ -133,5 +138,29 @@ public class UserBean implements Serializable{
 
 	public void setNewsByTarget(List<News> newsByTarget) {
 		this.newsByTarget = newsByTarget;
+	}
+
+	public List<News> getNewsByProfile() {
+		return books;
+	}
+
+	public void setNewsByProfile(List<News> newsByProfile) {
+		this.books = newsByProfile;
+	}
+
+	public List<News> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<News> books) {
+		this.books = books;
+	}
+	
+	public String getSelectedBook() {
+		return selectedBook;
+	}
+
+	public void setSelectedBook(String selectedBook) {
+		this.selectedBook = selectedBook;
 	}
 }
