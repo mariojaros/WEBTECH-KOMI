@@ -8,8 +8,14 @@
 <h:head>
 </h:head>
 <h:body>
-	<h:link outcome="author/komiAdd.xhtml" value="To the author section" />
-	<p></p>
-	<h:link outcome="user/komiNews.xhtml" value="To the user section" /> 
+	<f:facet name="last">
+		<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+	</f:facet>
+	
+	<h1> <img src="#{resource['images:logo.png']}" width="450px;"/>  </h1>
+	<p:panelGrid columns="1" styleClass="ahref">
+		<h:link outcome="author/komiAdd.xhtml" value="To the author section" />
+		<h:link outcome="user/komiNews.xhtml" value="To the user section" /> 
+	</p:panelGrid>
 </h:body>
 </html>

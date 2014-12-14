@@ -1,16 +1,27 @@
 body {
 	background-image: url("#{resource['images:pozadie.png']}");
-	background-repeat: repeat-y;
+	background-repeat: repeat;
 	padding: 0px;
 	margin: 0px;
 	padding: 0px;
 }
 
+#slogan {
+	margin-top: 3%;
+	margin-left: 55%;
+	font-family: normalFont;
+	font-size: 37px;
+}
+
+#slogan p{
+	margin-bottom: 3px;
+	margin-top: 2px;
+}
+
 #header {
-	padding-left: 350px;
 	width: 100%;
 	height: 40px;
-	margin-top: 150px;
+	margin-top: 20px;
 	background-color: #ff0000;
 	font-family: titleFont;
 }
@@ -113,7 +124,7 @@ h1{
 
 .menuButton{
 	font-size: medium;
-	margin-left: 35%;
+	margin-left: 50%;
 	height: 100%;
 }
 

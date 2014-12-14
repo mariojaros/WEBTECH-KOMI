@@ -13,23 +13,27 @@
 
 <h:body>
 	<h:outputStylesheet library="css" name="add.css"></h:outputStylesheet>
-		<h:form>
+		<div id="slogan">
+		<p>...use new way to paying</p>
+		<p>for digital content...</p>
+	</div>
+
+	<h:form>
 		<div id="header">
+			<div style="margin-left: 350px; height: 40px">
+				<p:button value="NEWS" href="komiNews.xhtml"></p:button>
+				<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
 
-			<p:button value="NEWS" href="komiNews.xhtml"></p:button>
-			<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
-
-			<p:menuButton value="#{userBean.label}" styleClass="menuButton">
-				<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
-				<p:menuitem value="Settings"></p:menuitem>
-				<p:menuitem value="Terms"></p:menuitem>
-				<p:separator />
-				<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
-			</p:menuButton>
-
+				<p:menuButton value="#{userBean.label}" styleClass="menuButton">
+					<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
+					<p:menuitem value="Settings"></p:menuitem>
+					<p:menuitem value="Terms"></p:menuitem>
+					<p:separator />
+					<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
+				</p:menuButton>
+			</div>
 		</div>
 	</h:form>
-
 	<div id="context">
 		<h1>
 			<span style="font-size: larger; margin-right: 5px;">+</span>ADD NEW

@@ -12,21 +12,25 @@
 	<f:facet name="last">
 		<h:outputStylesheet library="css" name="books.css"></h:outputStylesheet>
 	</f:facet>
+	<div id="slogan">
+		<p>...use new way to paying</p>
+		<p>for digital content...</p>
+	</div>
 
-		<h:form>
+	<h:form>
 		<div id="header">
+			<div style="margin-left: 350px; height: 40px">
+				<p:button value="NEWS" href="komiNews.xhtml"></p:button>
+				<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
 
-			<p:button value="NEWS" href="komiNews.xhtml"></p:button>
-			<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
-
-			<p:menuButton value="#{userBean.label}" styleClass="menuButton">
-				<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
-				<p:menuitem value="Settings"></p:menuitem>
-				<p:menuitem value="Terms"></p:menuitem>
-				<p:separator />
-				<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
-			</p:menuButton>
-
+				<p:menuButton value="#{userBean.label}" styleClass="menuButton">
+					<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
+					<p:menuitem value="Settings"></p:menuitem>
+					<p:menuitem value="Terms"></p:menuitem>
+					<p:separator />
+					<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
+				</p:menuButton>
+			</div>
 		</div>
 	</h:form>
 	<div id="content">
@@ -40,7 +44,8 @@
 					<h:panelGrid columns="1" style="width:100%">
 						<p:graphicImage width="40px" height="54px" value="#{book.path}" />
 						<h:outputText value="#{book.nazovAutora}" />
-						<p:commandLink update="@form" title="View Detail" oncomplete="PF('dialog').show()">
+						<p:commandLink update="@form" title="View Detail"
+							oncomplete="PF('dialog').show()">
 							<h:outputText styleClass="ui-icon ui-icon-search"
 								style="margin:0 auto;" />
 							<f:setPropertyActionListener target="#{booksBean.selectedBook}"
@@ -51,7 +56,7 @@
 			</p:dataGrid>
 
 			<p:dialog widgetVar="dialog" closable="true">
-				<p:graphicImage value="#{booksBean.selectedBook}"></p:graphicImage>
+				<p:graphicImage width="500px" value="#{booksBean.selectedBook}"></p:graphicImage>
 			</p:dialog>
 		</h:form>
 	</div>

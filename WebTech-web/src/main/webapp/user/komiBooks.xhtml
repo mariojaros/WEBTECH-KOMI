@@ -13,20 +13,25 @@
 		<h:outputStylesheet library="css" name="books.css"></h:outputStylesheet>
 	</f:facet>
 
-		<h:form>
+		<div id="slogan">
+		<p>...use new way to paying</p>
+		<p>for digital content...</p>
+	</div>
+
+	<h:form>
 		<div id="header">
+			<div style="margin-left: 350px; height: 40px">
+				<p:button value="NEWS" href="komiNews.xhtml"></p:button>
+				<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
 
-			<p:button value="NEWS" href="komiNews.xhtml"></p:button>
-			<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
-
-			<p:menuButton value="#{userBean.label}" styleClass="menuButton">
-				<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
-				<p:menuitem value="Settings"></p:menuitem>
-				<p:menuitem value="Terms"></p:menuitem>
-				<p:separator />
-				<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
-			</p:menuButton>
-
+				<p:menuButton value="#{userBean.label}" styleClass="menuButton">
+					<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
+					<p:menuitem value="Settings"></p:menuitem>
+					<p:menuitem value="Terms"></p:menuitem>
+					<p:separator />
+					<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
+				</p:menuButton>
+			</div>
 		</div>
 	</h:form>
 	<div id="content">
@@ -51,7 +56,7 @@
 			</p:dataGrid>
 
 			<p:dialog widgetVar="dialog" closable="true">
-				<p:graphicImage value="#{booksBean.selectedBook}"></p:graphicImage>
+				<p:graphicImage width="500px" value="#{booksBean.selectedBook}"></p:graphicImage>
 			</p:dialog>
 		</h:form>
 	</div>

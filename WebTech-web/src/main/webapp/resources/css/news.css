@@ -7,11 +7,22 @@ body {
 	padding: 0px;
 }
 
+#slogan {
+	margin-top: 3%;
+	margin-left: 55%;
+	font-family: normalFont;
+	font-size: 37px;
+}
+
+#slogan p{
+	margin-bottom: 3px;
+	margin-top: 2px;
+}
+
 #header {
-	padding-left: 350px;
 	width: 100%;
 	height: 40px;
-	margin-top: 150px;
+	margin-top: 20px;
 	background-color: #ff0000;
 	font-family: titleFont;
 }
@@ -95,13 +106,13 @@ body {
 }
 
 #content h2 {
-	text-align: center;
-	font-family: normalFont;
+	text-align: center; font-family : normalFont;
 	color: white;
 	font-size: small;
 	margin-bottom: 2px;
 	font-size: small;
 	margin-top: 0px;
+	font-family: normalFont;
 }
 
 #content tr td {
@@ -118,12 +129,11 @@ body {
 	border-style: none;
 }
 
-#content .ui-progressbar{
-	
+#content .ui-progressbar {
 	border-style: none;
 }
 
-#content .ui-progressbar-value{
+#content .ui-progressbar-value {
 	border-style: none;
 	background: #3399ff;
 	margin: 0px;
@@ -185,17 +195,17 @@ body {
 	background: #ff0000;
 }
 
-.menuButton{
+.menuButton {
 	font-size: medium;
-	margin-left: 35%;
+	margin-left: 50%;
 	height: 100%;
 }
 
-.menuButton  button span.ui-button-text   {
-	
+.menuButton  button span.ui-button-text {
 	width: 100%;
 	margin-right: 5px;
 }
+
 .menuButton .ui-widget {
 	background: #ff0000;
 	font-family: normalFont;

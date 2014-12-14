@@ -12,20 +12,25 @@
 	<f:facet name="last">
 		<h:outputStylesheet library="css" name="news.css"></h:outputStylesheet>
 	</f:facet>
+	<div id="slogan">
+		<p>...use new way to paying</p>
+		<p>for digital content...</p>
+	</div>
+
 	<h:form>
 		<div id="header">
+			<div style="margin-left: 350px; height: 40px">
+				<p:button value="NEWS" href="komiNews.xhtml"></p:button>
+				<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
 
-			<p:button value="NEWS" href="komiNews.xhtml"></p:button>
-			<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
-
-			<p:menuButton value="#{userBean.label}" styleClass="menuButton">
-				<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
-				<p:menuitem value="Settings"></p:menuitem>
-				<p:menuitem value="Terms"></p:menuitem>
-				<p:separator />
-				<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
-			</p:menuButton>
-
+				<p:menuButton value="#{userBean.label}" styleClass="menuButton">
+					<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
+					<p:menuitem value="Settings"></p:menuitem>
+					<p:menuitem value="Terms"></p:menuitem>
+					<p:separator />
+					<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
+				</p:menuButton>
+			</div>
 		</div>
 	</h:form>
 	<div id="content">
@@ -152,17 +157,6 @@
 	<p:graphicImage width="350px"
 		style="position: absolute; left: 20px; top: 10px"
 		value="#{resource['images:logo.png']}"></p:graphicImage>
-	<h:form>
-		<p:menuButton value="#{userBean.label}"
-			style="position: absolute; left: 89%; top: 10%"
-			styleClass="menuButton">
-			<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
-			<p:menuitem value="Settings"></p:menuitem>
-			<p:menuitem value="Terms"></p:menuitem>
-			<p:separator />
-			<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
-		</p:menuButton>
-	</h:form>
 
 </h:body>
 </html>

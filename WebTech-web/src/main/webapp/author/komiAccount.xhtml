@@ -11,20 +11,25 @@
 <h:body>
 	<h:outputStylesheet library="css" name="account.css"></h:outputStylesheet>
 
-		<h:form>
+	<div id="slogan">
+		<p>...use new way to paying</p>
+		<p>for digital content...</p>
+	</div>
+
+	<h:form>
 		<div id="header">
+			<div style="margin-left: 350px; height: 40px">
+				<p:button value="NEWS" href="komiNews.xhtml"></p:button>
+				<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
 
-			<p:button value="NEWS" href="komiNews.xhtml"></p:button>
-			<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
-
-			<p:menuButton value="#{userBean.label}" styleClass="menuButton">
-				<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
-				<p:menuitem value="Settings"></p:menuitem>
-				<p:menuitem value="Terms"></p:menuitem>
-				<p:separator />
-				<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
-			</p:menuButton>
-
+				<p:menuButton value="#{userBean.label}" styleClass="menuButton">
+					<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
+					<p:menuitem value="Settings"></p:menuitem>
+					<p:menuitem value="Terms"></p:menuitem>
+					<p:separator />
+					<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
+				</p:menuButton>
+			</div>
 		</div>
 	</h:form>
 
@@ -36,7 +41,8 @@
 				<p:panelGrid>
 					<p:row>
 						<p:column rowspan="3" style="padding-right: 50px">
-							<p:graphicImage value="" width="200px" height="300px"></p:graphicImage>
+							<p:graphicImage value="#{resource['images:avatar.jpeg']}"
+								width="200px" height="300px"></p:graphicImage>
 						</p:column>
 						<p:column rowspan="1">
 							<p:outputLabel value="First name: "></p:outputLabel>
@@ -94,7 +100,7 @@
 				</p:dataGrid>
 
 				<p:dialog widgetVar="dialog" closable="true">
-					<p:graphicImage value="#{authorBean.selectedBook}"></p:graphicImage>
+					<p:graphicImage width="500px" value="#{authorBean.selectedBook}"></p:graphicImage>
 				</p:dialog>
 			</h:form>
 		</div>
