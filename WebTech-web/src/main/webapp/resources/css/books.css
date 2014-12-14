@@ -50,8 +50,18 @@ body {
 #content tr {
 	border-style: none;
 }
+.menuButton{
+	font-size: medium;
+	margin-left: 35%;
+	height: 100%;
+}
+
+.menuButton  button span.ui-button-text   {
+	
+	width: 100%;
+	margin-right: 5px;
+}
 .menuButton .ui-widget {
-	border-style: none;
 	background: #ff0000;
 	font-family: normalFont;
 }
@@ -72,6 +82,7 @@ body {
 }
 
 #content .ui-widget-header{
+	font-family: normalFont;
 	border-style: none;
 	background: #ff0000;
 }

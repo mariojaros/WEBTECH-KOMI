@@ -1,6 +1,7 @@
 body {
+	background-color: white !important;
 	background-image: url("#{resource['images:pozadie.png']}");
-	background-repeat: repeat-y;
+	background-repeat: repeat;
 	padding: 0px;
 	margin: 0px;
 	padding: 0px;
@@ -33,7 +34,7 @@ body {
 
 #content {
 	text-align: center;
-	background-color: rgba(51, 51, 51, 0.5);
+	background-color: rgba(102, 102, 102, 0.6);
 	width: 98%;
 	min-height: 400px;
 	padding-top: 10px;
@@ -88,26 +89,44 @@ body {
 #content h1 {
 	color: white;
 	margin-top: 2px;
-	font-size: medium;
-	margin-top: 2px;
+	font-size: x-large;
+	font-family: normalFont;
+	margin-bottom: 0px;
 }
 
 #content h2 {
+	text-align: center;
+	font-family: normalFont;
 	color: white;
 	font-size: small;
 	margin-bottom: 2px;
 	font-size: small;
+	margin-top: 0px;
 }
 
 #content tr td {
+	padding: 5px;
+	text-align: justify;
+	font-size: small;
+	font-family: normalFont;
 	background-color: #333333;
 	border-style: none;
 	color: white;
-	padding: 1px;
 }
 
 #content tr {
 	border-style: none;
+}
+
+#content .ui-progressbar{
+	
+	border-style: none;
+}
+
+#content .ui-progressbar-value{
+	border-style: none;
+	background: #3399ff;
+	margin: 0px;
 }
 
 .dialog {
@@ -153,23 +172,31 @@ body {
 	width: 90%;
 	margin-left: auto !important;
 	margin-right: auto !important;
-	margin-top: 25px !important;
+	margin-top: 10px !important;
 	background: #990000;
 	border-style: none !important;
-	padding-left: 10px;
-	padding-bottom: 8px;
-	padding-right: 10px;
 }
 
 .donateButton span {
+	font-family: normalFont;
 	width: auto;
 	padding-left: 50px !important;
 	padding-right: 50px !important;
 	background: #ff0000;
 }
 
+.menuButton{
+	font-size: medium;
+	margin-left: 35%;
+	height: 100%;
+}
+
+.menuButton  button span.ui-button-text   {
+	
+	width: 100%;
+	margin-right: 5px;
+}
 .menuButton .ui-widget {
-	border-style: none;
 	background: #ff0000;
 	font-family: normalFont;
 }

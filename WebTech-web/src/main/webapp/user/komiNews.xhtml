@@ -12,14 +12,26 @@
 	<f:facet name="last">
 		<h:outputStylesheet library="css" name="news.css"></h:outputStylesheet>
 	</f:facet>
+		
+	<h:form>
+		<div id="header">
 
-	<div id="header">
-		<p:button value="news" href="komiNews.xhtml"></p:button>
-		<p:button value="books" href="komiBooks.xhtml"></p:button>
-	</div>
+			<p:button value="NEWS" href="komiNews.xhtml"></p:button>
+			<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
+
+			<p:menuButton value="#{userBean.label}" styleClass="menuButton">
+				<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
+				<p:menuitem value="Settings"></p:menuitem>
+				<p:menuitem value="Terms"></p:menuitem>
+				<p:separator />
+				<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
+			</p:menuButton>
+
+		</div>
+	</h:form>
 	<div id="content">
 		<p:fieldset styleClass="fieldset" toggleable="true"
-			legend="NAJNOVŠIE KOMIKSY">
+			legend="NEWEST">
 				
 				<h:form id="form">
 				<p:carousel id="contentCarousel" value="#{userBean.news}" var="new">
@@ -35,7 +47,7 @@
 						<p:outputLabel width="200px" value="#{new.description}"></p:outputLabel>
 					</p:panelGrid>
 
-					<p:progressBar id="progresBar" ajax="true" value="#{new.value}" interval="1000"/>
+					<p:progressBar id="progresBar" ajax="true" value="#{new.value}" labelTemplate="#{new.finalValue}$"/>
 
 					<p:commandButton value="donate" styleClass="donateButton"
 						style="margin:auto" onclick="PF('donateDialog#{new.id}').show()"></p:commandButton>
@@ -59,7 +71,7 @@
 		</p:fieldset>
 
 		<p:fieldset styleClass="fieldset" toggleable="true"
-			legend="NAJPOPULÁRNEJŠIE KOMIKSY">
+			legend="MOST POPULAR">
 			<p:carousel id="contentCarouselPop" value="#{userBean.newsByTarget}"
 				var="new">
 				<f:facet name="header"></f:facet>
@@ -73,7 +85,7 @@
 					<p:outputLabel width="200px" value="#{new.description}"></p:outputLabel>
 				</p:panelGrid>
 				
-				<p:progressBar id="progresBar"  value="#{new.value}" displayOnly="true"/>
+				<p:progressBar id="progresBar"  value="#{new.value}" displayOnly="true" labelTemplate="#{new.finalValue}$"/>
 				
 				<p:commandButton value="donate" styleClass="donateButton"
 					style="margin:auto" onclick="PF('donateDialog#{new.id}').show()"></p:commandButton>
@@ -97,8 +109,8 @@
 		</p:fieldset>
 
 		<p:fieldset styleClass="fieldset" toggleable="true"
-			legend="KOMIKSY PRED ODOMKNUTÍM">
-			<p:carousel id="contentCarouselOdom" value="#{userBean.news}"
+			legend="EARLY UNLOCKED">
+			<p:carousel id="contentCarouselOdom" value="#{userBean.newsAlUnlocked}"
 				var="new">
 				<f:facet name="header"></f:facet>
 				<p:panelGrid columns="1" style="margin: auto;">
@@ -111,7 +123,7 @@
 					<p:outputLabel width="200px" value="#{new.description}"></p:outputLabel>
 				</p:panelGrid>
 
-				<p:progressBar id="progresBar"  value="#{new.value}" displayOnly="true"/>
+				<p:progressBar id="progresBar"  value="#{new.value}" displayOnly="true" labelTemplate="#{new.finalValue}$"/>
 				
 				<p:commandButton value="donate" styleClass="donateButton"
 					style="margin:auto" onclick="PF('donateDialog#{new.id}').show()"></p:commandButton>
@@ -138,17 +150,7 @@
 	<p:graphicImage width="350px"
 		style="position: absolute; left: 20px; top: 10px"
 		value="#{resource['images:logo.png']}"></p:graphicImage>
-	<h:form>
-		<p:menuButton value="#{userBean.label}"
-			style="position: absolute; left: 89%; top: 10%"
-			styleClass="menuButton">
-			<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
-			<p:menuitem value="Settings"></p:menuitem>
-			<p:menuitem value="Terms"></p:menuitem>
-			<p:separator />
-			<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
-		</p:menuButton>
-	</h:form>
+	
 
 </h:body>
 </html>

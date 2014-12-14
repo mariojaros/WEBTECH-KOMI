@@ -19,12 +19,14 @@
 }
 
 body {
-	background-image: url("#{resource['images:pozadie.png']}");
+	background-image: url("#{resource['images:bak.png']}");
 	background-repeat: repeat-y;
 	height: 100%;
 }
 
 .button {
+	font-family: normalFont;
+	font-size: medium;
 	background: red;
 	height: 30px;
 	width: 200px;
@@ -41,7 +43,7 @@ body {
 }
 
 .button:hover {
-	background: black;
+	color: #054176;
 	cursor: pointer;
 	
 }
@@ -92,6 +94,7 @@ body {
 }
 
 .input {
+	background: white;
 	height: 30px;
 	width: 200px;
 	border-bottom-left-radius: 0em;
@@ -108,6 +111,8 @@ body {
 }
 
 .input-select-register {
+	color: gray;
+	background: white;
 	height: 30px;
 	width: 200px !important;
 	border-bottom-left-radius: 0em;
@@ -194,6 +199,11 @@ h1 {
 	border-style: solid;
 	border-color: red;
 	border-width: 2px;
+}
+
+@font-face {
+	font-family: normalFont;
+	src: url("#{resource['fonts:hel.otf']}");
 }
 
 @font-face {

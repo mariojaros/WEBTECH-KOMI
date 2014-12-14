@@ -11,10 +11,22 @@
 <h:body>
 	<h:outputStylesheet library="css" name="account.css"></h:outputStylesheet>
 
-	<div id="header">
-		<p:button value="news" href="komiNews.xhtml"></p:button>
-		<p:button value="books" href="komiBooks.xhtml"></p:button>
-	</div>
+		<h:form>
+		<div id="header">
+
+			<p:button value="NEWS" href="komiNews.xhtml"></p:button>
+			<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
+
+			<p:menuButton value="#{userBean.label}" styleClass="menuButton">
+				<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
+				<p:menuitem value="Settings"></p:menuitem>
+				<p:menuitem value="Terms"></p:menuitem>
+				<p:separator />
+				<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
+			</p:menuButton>
+
+		</div>
+	</h:form>
 
 	<div id="context" class="context">
 		<h:form>
@@ -88,21 +100,8 @@
 		</div>
 	</div>
 
-
-
 	<p:graphicImage width="350px"
 		style="position: absolute; left: 20px; top: 10px"
 		value="#{resource['images:logo.png']}"></p:graphicImage>
-	<h:form>
-		<p:menuButton value="#{userBean.label}"
-			style="position: absolute; left: 89%; top: 10%"
-			styleClass="menuButton">
-			<p:menuitem value="Account"></p:menuitem>
-			<p:menuitem value="Settings"></p:menuitem>
-			<p:menuitem value="Terms"></p:menuitem>
-			<p:separator />
-			<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
-		</p:menuButton>
-	</h:form>
 </h:body>
 </html>

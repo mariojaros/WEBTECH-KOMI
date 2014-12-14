@@ -43,11 +43,11 @@ body {
 
 #context h1 {
 	width: 100%;
-	background-color: #cccccc;
+	background-color: #333333;
 	font-family: normalFont;
 	font-stretch: normal;
 	font-size: 50px;
-	color: #333333;
+	color: white;
 	padding-top: 2px;
 	padding-bottom: 2px;
 }
@@ -97,6 +97,7 @@ body {
 
 #uploadForm .ui-fileupload-buttonbar .ui-button{
 	border-style: none;
+	background: #ff0000;
 }
 
 #uploadForm .ui-fileupload-content{
@@ -110,17 +111,28 @@ body {
 
 .uploadButton{
 	background: #ff0000;
-	border-style: solid;
+	border-style: none;
 	border-color: #990000;
 	border-width: 5px;
 	height: 50px;
 	margin-top: 10px;
 	width: 60%;
+	font-family: normalFont;
 	
 }
 
-.menuButton .ui-widget{
-	border-style: none;
+.menuButton{
+	font-size: medium;
+	margin-left: 35%;
+	height: 100%;
+}
+
+.menuButton  button span.ui-button-text   {
+	
+	width: 100%;
+	margin-right: 5px;
+}
+.menuButton .ui-widget {
 	background: #ff0000;
 	font-family: normalFont;
 }

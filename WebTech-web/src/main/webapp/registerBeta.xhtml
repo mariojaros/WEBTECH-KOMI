@@ -23,20 +23,20 @@
 			<br></br> <br></br>
 			<h:form>
 				<center>
-					<p:inputText placeholder="Tvoj nový nick" styleClass="input" id="username" value="#{newManagedBean.username}" required="true" requiredMessage="Fuck off"/> 
+					<p:inputText placeholder="Username" styleClass="input" id="username" value="#{newManagedBean.username}" required="true" requiredMessage="Fuck off"/> 
 					<br></br> <br></br>
-					<p:password placeholder="Tvoje heslo" styleClass="input" id="passwd1" value="#{newManagedBean.password}" match="passwd2" required="true"/>
+					<p:password placeholder="Password" styleClass="input" id="passwd1" value="#{newManagedBean.password}" match="passwd2" required="true"/>
 					<br></br> <br></br>
-					<p:password placeholder="Heslo opäť" styleClass="input" id="passwd2" value="#{newManagedBean.password}"/>
+					<p:password placeholder="Password again" styleClass="input" id="passwd2" value="#{newManagedBean.password}"/>
 					<br></br> <br></br>
 					<p:selectOneMenu styleClass="input-select-register" id="roly" value="#{newManagedBean.rola}">
-            		<f:selectItem itemLabel="Registrovať ako:" itemValue="" />
+            		<f:selectItem itemLabel="Register as:" itemValue="" />
             		<f:selectItem itemLabel="Author" itemValue="author" />            
             		<f:selectItem itemLabel="User" itemValue="user" />
         		</p:selectOneMenu>
         		<br></br>
         		<br></br>
-			 <p:commandButton styleClass="button" value="Register" ajax="false" action="#{newManagedBean.register}"></p:commandButton>
+			 <p:commandButton styleClass="button" value="REGISTER" ajax="false" action="#{newManagedBean.register}"></p:commandButton>
 				</center>
 			</h:form>
 		</div>

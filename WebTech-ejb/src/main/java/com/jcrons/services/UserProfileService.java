@@ -18,6 +18,8 @@ public interface UserProfileService {
 	
 	public List<News> getNewsByPurchased(String username);
 	
+	public List<News> getNewsAlUnlocked();
+	
 	public String getUserName(String username);
 	
 	public String getUserSurname(String username);

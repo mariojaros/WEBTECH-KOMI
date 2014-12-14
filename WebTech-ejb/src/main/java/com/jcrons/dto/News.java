@@ -12,6 +12,8 @@ public class News {
 	
 	private String path;
 	
+	private int finalValue;
+	
 	private int value;
 
 	public int getId() {
@@ -60,5 +62,13 @@ public class News {
 
 	public void setValue(int value) {
 		this.value = value;
+	}
+
+	public int getFinalValue() {
+		return finalValue;
+	}
+
+	public void setFinalValue(int finalValue) {
+		this.finalValue = finalValue;
 	}
 }

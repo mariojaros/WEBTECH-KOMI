@@ -46,6 +46,7 @@ public class UserServiceImpl implements UserProfileService{
 			newOne.setNazovAutora(content.getProfile().getFirstName());
 			newOne.setPath(content.getPath());
 			newOne.setValue(getPercent(content.getCurrentValue(),content.getFinishValue()));
+			newOne.setFinalValue(content.getFinishValue());
 			if (content.getCurrentValue()<content.getFinishValue()){
 				if (!unlocked) news.add(newOne);
 			}
@@ -118,6 +119,7 @@ public class UserServiceImpl implements UserProfileService{
 			newOne.setNazovAutora(content.getProfile().getFirstName());
 			newOne.setPath(content.getPath());
 			newOne.setValue(getPercent(content.getCurrentValue(),content.getFinishValue()));
+			newOne.setFinalValue(content.getFinishValue());
 			if (content.getCurrentValue()<content.getFinishValue()){
 				news.add(newOne);
 			}
@@ -138,6 +140,7 @@ public class UserServiceImpl implements UserProfileService{
 			newOne.setNazovAutora(content.getProfile().getFirstName());
 			newOne.setPath(content.getPath());
 			newOne.setValue(getPercent(content.getCurrentValue(),content.getFinishValue()));
+			newOne.setFinalValue(content.getFinishValue());
 			news.add(newOne);
 		}
 		return news;
@@ -155,7 +158,28 @@ public class UserServiceImpl implements UserProfileService{
 			newOne.setNazovAutora(content.getProfile().getFirstName());
 			newOne.setPath(content.getPath());
 			newOne.setValue(getPercent(content.getCurrentValue(),content.getFinishValue()));
+			newOne.setFinalValue(content.getFinishValue());
 			news.add(newOne);
+		}
+		return news;
+	}
+
+	@Override
+	public List<News> getNewsAlUnlocked() {
+		List<DigitalContent> contents= contentDao.findAll();
+		List<News> news = new ArrayList<News>();
+		for (DigitalContent content : contents){
+			News newOne = new News();
+			newOne.setId(content.getIdDigitalContent());
+			newOne.setContentName(content.getName());
+			newOne.setDescription(content.getDescription());
+			newOne.setNazovAutora(content.getProfile().getFirstName());
+			newOne.setPath(content.getPath());
+			newOne.setValue(getPercent(content.getCurrentValue(),content.getFinishValue()));
+			newOne.setFinalValue(content.getFinishValue());
+			if (newOne.getValue()>=90 && newOne.getValue()<100){
+			news.add(newOne);
+			}
 		}
 		return news;
 	}

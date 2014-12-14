@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @NamedQueries({
-@NamedQuery(name="DigitalContent.findAll", query="SELECT d FROM DigitalContent d"),
+@NamedQuery(name="DigitalContent.findAll", query="SELECT d FROM DigitalContent d ORDER BY d.idDigitalContent DESC"),
 @NamedQuery(name="DigitalContent.findAllByMostPop",query="SELECT d FROM DigitalContent d ORDER BY d.currentValue DESC"),
 @NamedQuery(name="DigitalContent.findByProfile", query="Select d FROM DigitalContent d WHERE d.profile.idProfile = :profile" )
 })

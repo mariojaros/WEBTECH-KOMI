@@ -12,18 +12,28 @@
 	<f:facet name="last">
 		<h:outputStylesheet library="css" name="news.css"></h:outputStylesheet>
 	</f:facet>
+	<h:form>
+		<div id="header">
 
-	<div id="header">
-		<p:button value="news" href="komiNews.xhtml"></p:button>
-		<p:button value="books" href="komiBooks.xhtml"></p:button>
-	</div>
+			<p:button value="NEWS" href="komiNews.xhtml"></p:button>
+			<p:button value="BOOKS" href="komiBooks.xhtml"></p:button>
+
+			<p:menuButton value="#{userBean.label}" styleClass="menuButton">
+				<p:menuitem value="Account" url="komiAccount.xhtml"></p:menuitem>
+				<p:menuitem value="Settings"></p:menuitem>
+				<p:menuitem value="Terms"></p:menuitem>
+				<p:separator />
+				<p:menuitem value="Logout" action="#{userBean.logout}"></p:menuitem>
+			</p:menuButton>
+
+		</div>
+	</h:form>
 	<div id="content">
-		<p:fieldset styleClass="fieldset" toggleable="true"
-			legend="NAJNOVŠIE KOMIKSY">
-				
-				<h:form id="form">
+		<p:fieldset styleClass="fieldset" toggleable="true" legend="NEWEST">
+
+			<h:form id="form">
 				<p:carousel id="contentCarousel" value="#{userBean.news}" var="new">
-					
+
 					<f:facet name="header"></f:facet>
 					<p:panelGrid columns="1" style="margin: auto;">
 						<h1>#{new.contentName}</h1>
@@ -35,7 +45,8 @@
 						<p:outputLabel width="200px" value="#{new.description}"></p:outputLabel>
 					</p:panelGrid>
 
-					<p:progressBar id="progresBar" ajax="true" value="#{new.value}" interval="1000"/>
+					<p:progressBar id="progresBar" ajax="true" value="#{new.value}"
+						labelTemplate="#{new.finalValue}" />
 
 					<p:commandButton value="donate" styleClass="donateButton"
 						style="margin:auto" onclick="PF('donateDialog#{new.id}').show()"></p:commandButton>
@@ -43,23 +54,24 @@
 					<div id="dialog">
 						<p:dialog header="Donate" widgetVar="donateDialog#{new.id}"
 							minHeight="40" styleClass="dialog">
-								<p:growl id="growl" showDetail="true" />
-								<p:panelGrid columns="2">
-									<p:outputLabel value="Set your donate: "></p:outputLabel>
-									<p:inputText value="#{userBean.donate}"></p:inputText>
-									<p:commandButton value="Donate" styleClass="button"
-										action="#{userBean.donateKmks(new.id)}"></p:commandButton>
-									<p:commandButton value="Cancel" styleClass="button" onclick="PF('donateDialog#{new.id}').hide()"></p:commandButton>
-								</p:panelGrid>
+							<p:growl id="growl" showDetail="true" />
+							<p:panelGrid columns="2">
+								<p:outputLabel value="Set your donate: "></p:outputLabel>
+								<p:inputText value="#{userBean.donate}"></p:inputText>
+								<p:commandButton value="Donate" styleClass="button"
+									action="#{userBean.donateKmks(new.id)}"></p:commandButton>
+								<p:commandButton value="Cancel" styleClass="button"
+									onclick="PF('donateDialog#{new.id}').hide()"></p:commandButton>
+							</p:panelGrid>
 						</p:dialog>
 					</div>
-					
+
 				</p:carousel>
 			</h:form>
 		</p:fieldset>
 
 		<p:fieldset styleClass="fieldset" toggleable="true"
-			legend="NAJPOPULÁRNEJŠIE KOMIKSY">
+			legend="MOST POPULAR">
 			<p:carousel id="contentCarouselPop" value="#{userBean.newsByTarget}"
 				var="new">
 				<f:facet name="header"></f:facet>
@@ -72,9 +84,10 @@
 						style="margin-top: 10px" />
 					<p:outputLabel width="200px" value="#{new.description}"></p:outputLabel>
 				</p:panelGrid>
-				
-				<p:progressBar id="progresBar"  value="#{new.value}" displayOnly="true"/>
-				
+
+				<p:progressBar id="progresBar" value="#{new.value}"
+					displayOnly="true" labelTemplate="#{new.finalValue}" />
+
 				<p:commandButton value="donate" styleClass="donateButton"
 					style="margin:auto" onclick="PF('donateDialog#{new.id}').show()"></p:commandButton>
 
@@ -97,9 +110,9 @@
 		</p:fieldset>
 
 		<p:fieldset styleClass="fieldset" toggleable="true"
-			legend="KOMIKSY PRED ODOMKNUTÍM">
-			<p:carousel id="contentCarouselOdom" value="#{userBean.news}"
-				var="new">
+			legend="EARLY UNLOCKED">
+			<p:carousel id="contentCarouselOdom"
+				value="#{userBean.newsAlUnlocked}" var="new">
 				<f:facet name="header"></f:facet>
 				<p:panelGrid columns="1" style="margin: auto;">
 					<h1>#{new.contentName}</h1>
@@ -111,8 +124,9 @@
 					<p:outputLabel width="200px" value="#{new.description}"></p:outputLabel>
 				</p:panelGrid>
 
-				<p:progressBar id="progresBar"  value="#{new.value}" displayOnly="true"/>
-				
+				<p:progressBar id="progresBar" value="#{new.value}"
+					displayOnly="true" labelTemplate="#{new.finalValue}" />
+
 				<p:commandButton value="donate" styleClass="donateButton"
 					style="margin:auto" onclick="PF('donateDialog#{new.id}').show()"></p:commandButton>
 
