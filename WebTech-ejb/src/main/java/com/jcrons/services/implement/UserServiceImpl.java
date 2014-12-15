@@ -5,6 +5,9 @@ import java.util.List;
 
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 import com.jcrons.dao.ContentDao;
 import com.jcrons.dao.PaymentInfoDao;
@@ -17,6 +20,8 @@ import com.jcrons.services.PaymentService;
 import com.jcrons.services.UserProfileService;
 
 @Stateless
+@Path("/Content")
+@Produces(MediaType.TEXT_PLAIN)
 public class UserServiceImpl implements UserProfileService{
 	
 	@EJB
@@ -35,6 +40,7 @@ public class UserServiceImpl implements UserProfileService{
 	PaymentInfoDao payDao;
 	
 	@Override
+	@Path("/getNews")
 	public List<News> getNews(boolean unlocked) {
 		List<DigitalContent> contents= contentDao.findAll();
 		List<News> news = new ArrayList<News>();
